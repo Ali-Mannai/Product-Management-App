@@ -1,0 +1,89 @@
+<div class="container" *ngIf="productFormGroup">
+
+    <form [formGroup]="productFormGroup">
+      <!-- Champ ID -->
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" id="id" class="form-control" formControlName="id" readonly>
+      </div>
+  
+      <!-- Champ Name -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          class="form-control" 
+          formControlName="name"
+          [ngClass]="{'is-invalid': submitted && productFormGroup.controls['name'].errors}">
+        <div *ngIf="submitted && productFormGroup.controls['name'].errors" class="invalid-feedback">
+          <div *ngIf="productFormGroup.controls['name'].errors['required']">
+            Name is required.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Champ Price -->
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input 
+          type="text" 
+          id="price" 
+          class="form-control" 
+          formControlName="price"
+          [ngClass]="{'is-invalid': submitted && productFormGroup.controls['price'].errors}">
+        <div *ngIf="submitted && productFormGroup.controls['price'].errors" class="invalid-feedback">
+          <div *ngIf="productFormGroup.controls['price'].errors['required']">
+            Price is required.
+          </div>
+          <div *ngIf="productFormGroup.controls['price'].errors['pattern']">
+            Enter a valid price.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Champ Quantity -->
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input 
+          type="text" 
+          id="quantity" 
+          class="form-control" 
+          formControlName="quantity"
+          [ngClass]="{'is-invalid': submitted && productFormGroup.controls['quantity'].errors}">
+        <div *ngIf="submitted && productFormGroup.controls['quantity'].errors" class="invalid-feedback">
+          <div *ngIf="productFormGroup.controls['quantity'].errors['required']">
+            Quantity is required.
+          </div>
+          <div *ngIf="productFormGroup.controls['quantity'].errors['pattern']">
+            Enter a valid quantity.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Champ Selected -->
+      <div class="form-group">
+        <label for="selected">Selected</label>
+        <input 
+          type="checkbox" 
+          id="selected" 
+          formControlName="selected" 
+          class="form-check-input">
+      </div>
+  
+      <!-- Champ Available -->
+      <div class="form-group">
+        <label for="available">Available</label>
+        <input 
+          type="checkbox" 
+          id="available" 
+          formControlName="available" 
+          class="form-check-input">
+      </div>
+  
+      <!-- Bouton Save -->
+      <button type="button" class="btn btn-success" (click)="onUpdateProduct()">Save</button>
+    </form>
+    
+  </div>
+  
