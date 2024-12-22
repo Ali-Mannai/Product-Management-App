@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MiniProjet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Product-Management-App
+The Product Management App is a web application that streamlines product operations with features like adding, updating, deleting, buying, and selling products. It offers an intuitive interface for efficient inventory and transaction management.
+>>>>>>> 328ef9614e6ceefda760b1a037935c0df6cdb64d
